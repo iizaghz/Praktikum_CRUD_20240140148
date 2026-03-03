@@ -1,6 +1,5 @@
 package com.deploy.praktikum1.controller;
 
-
 import com.deploy.praktikum1.model.dto.UserAddRequest;
 import com.deploy.praktikum1.model.dto.UserDto;
 import com.deploy.praktikum1.service.UserService;
@@ -26,6 +25,7 @@ public class UserController {
     )
     public ResponseEntity<Map<String, Object>> AddUser(@RequestBody UserAddRequest request) {
         UserDto result = userService.AddUser(request);
+
         return ResponseEntity.status(HttpStatus.CREATED).body(Map.of(
                 "status", "success",
                 "data", result
@@ -38,14 +38,14 @@ public class UserController {
     )
     public ResponseEntity<Map<String, Object>> getAllUser() {
         List<UserDto> result = userService.getAllUser();
+
         return ResponseEntity.status(HttpStatus.OK).body(Map.of(
                 "status", "success",
                 "data", result
         ));
     }
-
     @GetMapping(
-            path = "api/users{id}",
+            path = "/api/users/{id}",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<Map<String, Object>> getUserById(@PathVariable("id") String id) {
@@ -79,7 +79,7 @@ public class UserController {
     public ResponseEntity<Map<String, Object>> DeleteUser(@PathVariable("id") String id) {
         userService.DeleteUser(id);
         return ResponseEntity.status(HttpStatus.OK).body(Map.of(
-                "status", "success delete user with id" + id
+                "status", "success delete user with id " + id
         ));
     }
 }
