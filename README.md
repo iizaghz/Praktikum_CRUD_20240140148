@@ -1,4 +1,5 @@
-<img width="1919" height="1057" alt="image" src="https://github.com/user-attachments/assets/e0987d18-836e-4de0-868d-93bad9d43a03" />
+<img width="1919" height="1077" alt="image" src="https://github.com/user-attachments/assets/1e52855d-4dd2-41b6-a0d8-f6c192a7e688" />
+
 
 Praktikum CRUD – 20240140148
 
